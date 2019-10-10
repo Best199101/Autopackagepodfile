@@ -15,7 +15,7 @@ project_path = current_path
 podfile_path = project_path + '/Podfile'
 workspace_name = 'G_OSLib'
 build_path = project_path + '/DerivedData'
-product_path = super_path + '/' + workspace_name + '/Frameworks'
+product_path = super_path + '/' + workspace_name + '/Classes'
 
 
 if os.path.exists(build_path):
@@ -90,7 +90,7 @@ def transformLibToStaticLib(s):
 
 
     
-    result_path = '%s/%s' %(product_path,s)
+    result_path = '%s/%s/Frameworks' %(product_path,s)
 
     if os.path.exists(result_path):
             
@@ -98,7 +98,7 @@ def transformLibToStaticLib(s):
             os.system(rmCmd)
 
 
-    os.makedirs(result_path) 
+    os.makedirs(result_path)
 
 
     if framkework_Satus == 1:
